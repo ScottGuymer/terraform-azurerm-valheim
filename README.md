@@ -21,14 +21,19 @@ No modules.
 
 ## Resources
 
-| Name                                                                                                                               | Type     |
-| ---------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| [azurerm_container_group.valheim](https://registry.terraform.io/providers/hashicorp/azurerm/2.54.0/docs/resources/container_group) | resource |
-| [azurerm_resource_group.rg](https://registry.terraform.io/providers/hashicorp/azurerm/2.54.0/docs/resources/resource_group)        | resource |
-| [azurerm_storage_account.valheim](https://registry.terraform.io/providers/hashicorp/azurerm/2.54.0/docs/resources/storage_account) | resource |
-| [azurerm_storage_share.config](https://registry.terraform.io/providers/hashicorp/azurerm/2.54.0/docs/resources/storage_share)      | resource |
-| [azurerm_storage_share.data](https://registry.terraform.io/providers/hashicorp/azurerm/2.54.0/docs/resources/storage_share)        | resource |
-| [random_string.storagename](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string)                 | resource |
+| Name                                                                                                                                                                              | Type     |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| [azurerm_backup_container_storage_account.protection-container](https://registry.terraform.io/providers/hashicorp/azurerm/2.54.0/docs/resources/backup_container_storage_account) | resource |
+| [azurerm_backup_policy_file_share.daily](https://registry.terraform.io/providers/hashicorp/azurerm/2.54.0/docs/resources/backup_policy_file_share)                                | resource |
+| [azurerm_backup_protected_file_share.config](https://registry.terraform.io/providers/hashicorp/azurerm/2.54.0/docs/resources/backup_protected_file_share)                         | resource |
+| [azurerm_backup_protected_file_share.data](https://registry.terraform.io/providers/hashicorp/azurerm/2.54.0/docs/resources/backup_protected_file_share)                           | resource |
+| [azurerm_container_group.valheim](https://registry.terraform.io/providers/hashicorp/azurerm/2.54.0/docs/resources/container_group)                                                | resource |
+| [azurerm_recovery_services_vault.vault](https://registry.terraform.io/providers/hashicorp/azurerm/2.54.0/docs/resources/recovery_services_vault)                                  | resource |
+| [azurerm_resource_group.rg](https://registry.terraform.io/providers/hashicorp/azurerm/2.54.0/docs/resources/resource_group)                                                       | resource |
+| [azurerm_storage_account.valheim](https://registry.terraform.io/providers/hashicorp/azurerm/2.54.0/docs/resources/storage_account)                                                | resource |
+| [azurerm_storage_share.config](https://registry.terraform.io/providers/hashicorp/azurerm/2.54.0/docs/resources/storage_share)                                                     | resource |
+| [azurerm_storage_share.data](https://registry.terraform.io/providers/hashicorp/azurerm/2.54.0/docs/resources/storage_share)                                                       | resource |
+| [random_string.storagename](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string)                                                                | resource |
 
 ## Inputs
 
