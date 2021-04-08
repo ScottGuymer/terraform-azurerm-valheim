@@ -34,7 +34,7 @@ resource "azurerm_container_group" "valheim" {
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   ip_address_type     = "public"
-  dns_name_label      = var.dns_host
+  dns_name_label      = var.hostname
   os_type             = "Linux"
 
   container {
@@ -55,18 +55,6 @@ resource "azurerm_container_group" "valheim" {
       port     = 2458
       protocol = "UDP"
     }
-    # ports {
-    #   port     = 2456
-    #   protocol = "TCP"
-    # }
-    # ports {
-    #   port     = 2457
-    #   protocol = "TCP"
-    # }
-    # ports {
-    #   port     = 2458
-    #   protocol = "TCP"
-    # }
     volume {
       name                 = "config"
       mount_path           = "/config"
@@ -87,6 +75,4 @@ resource "azurerm_container_group" "valheim" {
       WORLD_NAME  = var.world_name
     }
   }
-
-
 }
