@@ -4,9 +4,9 @@ resource "azurerm_resource_group" "rg" {
 }
 
 resource "random_string" "storagename" {
-  length           = 8
-  special          = false 
-  upper = false 
+  length  = 8
+  special = false
+  upper   = false
 }
 
 resource "azurerm_storage_account" "valheim" {
@@ -58,14 +58,14 @@ resource "azurerm_container_group" "valheim" {
     volume {
       name                 = "config"
       mount_path           = "/config"
-      share_name = azurerm_storage_share.config.name
+      share_name           = azurerm_storage_share.config.name
       storage_account_name = azurerm_storage_account.valheim.name
       storage_account_key  = azurerm_storage_account.valheim.primary_access_key
     }
     volume {
       name                 = "data"
       mount_path           = "/opt/valheim"
-      share_name = azurerm_storage_share.data.name
+      share_name           = azurerm_storage_share.data.name
       storage_account_name = azurerm_storage_account.valheim.name
       storage_account_key  = azurerm_storage_account.valheim.primary_access_key
     }
