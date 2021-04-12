@@ -39,14 +39,17 @@ No modules.
 
 ## Inputs
 
-| Name                                                                                             | Description                                                                                       | Type           | Default | Required |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------- | -------------- | ------- | :------: |
-| <a name="input_adminlist_ids"></a> [adminlist_ids](#input_adminlist_ids)                         | List of admin SteamIDs                                                                            | `list(string)` | `[]`    |    no    |
-| <a name="input_environment_variables"></a> [environment_variables](#input_environment_variables) | Extra environment variables that will be passed to the valheim server                             | `map`          | `{}`    |    no    |
-| <a name="input_hostname"></a> [hostname](#input_hostname)                                        | Hostname to use when deploying container group. Will be postfixed with <region>.azurecontainer.io | `string`       | n/a     |   yes    |
-| <a name="input_server_name"></a> [server_name](#input_server_name)                               | What to call your server                                                                          | `string`       | n/a     |   yes    |
-| <a name="input_server_password"></a> [server_password](#input_server_password)                   | The password to set on your server                                                                | `string`       | n/a     |   yes    |
-| <a name="input_world_name"></a> [world_name](#input_world_name)                                  | The name for your world                                                                           | `string`       | n/a     |   yes    |
+| Name                                                                                             | Description                                                                                       | Type           | Default                     | Required |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------- | -------------- | --------------------------- | :------: |
+| <a name="input_adminlist_ids"></a> [adminlist_ids](#input_adminlist_ids)                         | List of admin SteamIDs                                                                            | `list(string)` | `[]`                        |    no    |
+| <a name="input_environment_variables"></a> [environment_variables](#input_environment_variables) | Extra environment variables that will be passed to the valheim server                             | `map(any)`     | `{}`                        |    no    |
+| <a name="input_hostname"></a> [hostname](#input_hostname)                                        | Hostname to use when deploying container group. Will be postfixed with <region>.azurecontainer.io | `string`       | n/a                         |   yes    |
+| <a name="input_region"></a> [region](#input_region)                                              | Azure region to deploy to                                                                         | `string`       | `"westeurope"`              |    no    |
+| <a name="input_resource_group"></a> [resource_group](#input_resource_group)                      | The name of the resource group to deploy to                                                       | `string`       | `"valheim"`                 |    no    |
+| <a name="input_server_name"></a> [server_name](#input_server_name)                               | What to call your server                                                                          | `string`       | n/a                         |   yes    |
+| <a name="input_server_password"></a> [server_password](#input_server_password)                   | The password to set on your server                                                                | `string`       | n/a                         |   yes    |
+| <a name="input_valheim_server_image"></a> [valheim_server_image](#input_valheim_server_image)    | The name and tag of the container image to run.                                                   | `string`       | `"lloesche/valheim-server"` |    no    |
+| <a name="input_world_name"></a> [world_name](#input_world_name)                                  | The name for your world                                                                           | `string`       | n/a                         |   yes    |
 
 ## Outputs
 

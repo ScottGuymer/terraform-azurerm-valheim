@@ -1,6 +1,6 @@
 resource "azurerm_resource_group" "rg" {
-  name     = "valheim"
-  location = "westeurope"
+  name     = var.resource_group
+  location = var.region
 }
 
 resource "random_string" "storagename" {
@@ -39,7 +39,7 @@ resource "azurerm_container_group" "valheim" {
 
   container {
     name   = "valheim-server"
-    image  = "lloesche/valheim-server"
+    image  = var.valheim_server_image
     cpu    = "2"
     memory = "5"
 
