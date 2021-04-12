@@ -40,8 +40,8 @@ resource "azurerm_container_group" "valheim" {
   container {
     name   = "valheim-server"
     image  = "lloesche/valheim-server"
-    cpu    = "4"
-    memory = "8"
+    cpu    = "2"
+    memory = "5"
 
     ports {
       port     = 2456
@@ -69,10 +69,11 @@ resource "azurerm_container_group" "valheim" {
       storage_account_name = azurerm_storage_account.valheim.name
       storage_account_key  = azurerm_storage_account.valheim.primary_access_key
     }
-    environment_variables = {
-      SERVER_NAME = var.server_name
-      SERVER_PASS = var.server_password
-      WORLD_NAME  = var.world_name
-    }
+    environment_variables = merge({
+      SERVER_NAME   = var.server_name
+      SERVER_PASS   = var.server_password
+      WORLD_NAME    = var.world_name
+      ADMINLIST_IDS = join(" ", var.adminlist_ids)
+    }, var.environment_variables)
   }
 }

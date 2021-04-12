@@ -1,6 +1,8 @@
 # terraform-azurerm-valheim
 
-Terraform module to deploy a valheim server to Azure Container Instances.
+Terraform module to deploy a Valheim server to Azure Container Instances. This is based on the great work done over at [lloesche/valheim-server-docker]https://github.com/lloesche/valheim-server-docker) to containerize the Valheim server.
+
+This module will deploy a container group to azure and will include a daily snapshot of the file shared mounted to the container should you need to restore your world.
 
 ## Requirements
 
@@ -37,12 +39,14 @@ No modules.
 
 ## Inputs
 
-| Name                                                                           | Description                                                                                       | Type     | Default | Required |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------- | -------- | ------- | :------: |
-| <a name="input_hostname"></a> [hostname](#input_hostname)                      | Hostname to use when deploying container group. Will be postfixed with <region>.azurecontainer.io | `string` | n/a     |   yes    |
-| <a name="input_server_name"></a> [server_name](#input_server_name)             | What to call your server                                                                          | `string` | n/a     |   yes    |
-| <a name="input_server_password"></a> [server_password](#input_server_password) | The password to set on your server                                                                | `string` | n/a     |   yes    |
-| <a name="input_world_name"></a> [world_name](#input_world_name)                | The name for your world                                                                           | `string` | n/a     |   yes    |
+| Name                                                                                             | Description                                                                                       | Type           | Default | Required |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------- | -------------- | ------- | :------: |
+| <a name="input_adminlist_ids"></a> [adminlist_ids](#input_adminlist_ids)                         | List of admin SteamIDs                                                                            | `list(string)` | `[]`    |    no    |
+| <a name="input_environment_variables"></a> [environment_variables](#input_environment_variables) | Extra environment variables that will be passed to the valheim server                             | `map`          | `{}`    |    no    |
+| <a name="input_hostname"></a> [hostname](#input_hostname)                                        | Hostname to use when deploying container group. Will be postfixed with <region>.azurecontainer.io | `string`       | n/a     |   yes    |
+| <a name="input_server_name"></a> [server_name](#input_server_name)                               | What to call your server                                                                          | `string`       | n/a     |   yes    |
+| <a name="input_server_password"></a> [server_password](#input_server_password)                   | The password to set on your server                                                                | `string`       | n/a     |   yes    |
+| <a name="input_world_name"></a> [world_name](#input_world_name)                                  | The name for your world                                                                           | `string`       | n/a     |   yes    |
 
 ## Outputs
 

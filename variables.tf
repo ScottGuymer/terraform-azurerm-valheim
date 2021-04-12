@@ -15,3 +15,15 @@ variable "world_name" {
   description = "The name for your world"
   type        = string
 }
+
+variable "adminlist_ids" {
+  description = "List of admin SteamIDs"
+  type        = list(string)
+  default     = []
+}
+
+variable "environment_variables" {
+  description = "Extra environment variables that will be passed to the valheim server"
+  type            = map
+  default         = {}
+}
