@@ -2,33 +2,6 @@ resource "azurerm_resource_group" "rg" {
   name     = var.resource_group
   location = var.region
 }
-
-resource "random_string" "storagename" {
-  length  = 8
-  special = false
-  upper   = false
-}
-
-resource "azurerm_storage_account" "valheim" {
-  name                     = "valheim${random_string.storagename.result}"
-  resource_group_name      = azurerm_resource_group.rg.name
-  location                 = azurerm_resource_group.rg.location
-  account_tier             = "Standard"
-  account_replication_type = "GRS"
-}
-
-resource "azurerm_storage_share" "config" {
-  name                 = "config"
-  storage_account_name = azurerm_storage_account.valheim.name
-  quota                = 50
-}
-
-resource "azurerm_storage_share" "data" {
-  name                 = "data"
-  storage_account_name = azurerm_storage_account.valheim.name
-  quota                = 50
-}
-
 resource "azurerm_container_group" "valheim" {
   name                = "valheim-server"
   location            = azurerm_resource_group.rg.location
